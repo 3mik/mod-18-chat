@@ -19,13 +19,12 @@ app.get('/', function(req, res){
 io.on('connection', function(socket) {
     //miejsce dla funkcji, które zostaną wykonane po podłączeniu klienta
 
-    socket.on('join', function(name){
-        // użytkownika, który pojawił się w aplikacji zapisujemy do serwisu trzymającego listę osób w czacie
+    socket.on('join', function(name){        
         userService.addUser({
           id: socket.id,
           name
         });
-        // aplikacja emituje zdarzenie update, które aktualizuje informację na temat listy użytkowników każdemu nasłuchującemu na wydarzenie 'update'
+        
         io.emit('update', {
           users: userService.getAllUsers()
         });

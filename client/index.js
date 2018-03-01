@@ -21,21 +21,3 @@ if (module.hot) {
     render(NewApp)
   });
 }
-
-
-/*ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-);
-
-if (module.hot) {
-    module.hot.accept('./App', () => {
-      const NextApp = require('./App').default;
-      ReactDOM.render(
-              <AppContainer>
-                  <NextApp />
-              </AppContainer>,
-        document.getElementById('root')
-      );
-    });
-  }*/

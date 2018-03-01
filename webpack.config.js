@@ -18,6 +18,7 @@ function getPlugins() {
             })
         ];
     if (env === 'production') {
+        console.log("prod build");
         plugins.push(
             new webpack.optimize.UglifyJsPlugin(),
             new OptimizeJsPlugin({
